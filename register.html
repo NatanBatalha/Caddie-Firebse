@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Caddie</title>
+    <link rel="stylesheet" href="./register.css">
+    <link rel="stylesheet" href="./global.css">
+</head>
+<body class="centralize">
+    <form>
+        <div class="logo">
+            <img src="./img/Prancheta_10.png" alt="Caddie">
+        </div>
+        <div class="form-field">
+            <div><label>Login:</label></div>
+            <input type="email" placeholder="your@email.com" onchange="onChangeEmail()" id="email"/>
+            <div class="error" id="email-required-error">
+                Email Required
+            </div>
+            <div class="error" id="email-invalid-error">
+                Email is invalid
+            </div>
+        </div>
+
+        <div class="form-field">
+            <div><label>Password:</label></div>
+            <input type="password" placeholder="Password" id="password" onchange="onChangePassword()"/>
+            <div class="error" id="password-required-error">
+                Password Required
+            </div>
+            <div class="error" id="password-min-length-error">
+                Password must have 6 min caracteres
+            </div>
+        </div>
+        <div class="form-field">
+            <div><label>Confirm Passoword</label></div>
+            <input type="password" placeholder="Confirm Password" id="confirmPassword"/>
+            <div class="error" id="password-doesnt-match-error">
+                Password and Confirm Password must be the same
+            </div>
+        </div>
+        <div>
+            <button type="button" class="solid" disabled="true" id="register-button" onclick="register()">Register</button>
+        </div>
+        <div>
+            <button type="button" class="clear">Login</button>
+        </div>
+    </form>
+</body>
+
+
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="./firebase-init.js"></script>
+<script src="./register.js"></script>
+<script src="validations.js"></script>
+<script src="loading.js"></script>
+</html>
